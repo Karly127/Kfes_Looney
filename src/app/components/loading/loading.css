@@ -1,0 +1,110 @@
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4efe7;
+  font-family: 'Inter', sans-serif;
+}
+
+.cup-container {
+  position: relative;
+  width: 140px;
+  height: 120px;
+}
+
+/* El cuerpo de la taza */
+.coffee-cup {
+  position: absolute;
+  left: 0; 
+  top: 0;
+  width: 100px;
+  height: 120px;
+  border: 6px solid #2b221a;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background-color: #ffffff;
+  overflow: hidden; 
+  z-index: 2;
+}
+
+/* El asa de la taza */
+.cup-handle {
+  position: absolute;
+  right: 15px; 
+  top: 20px;
+  width: 40px;
+  height: 60px;
+  border: 6px solid #2b221a;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* El texto de carga */
+.loading-text {
+  margin-top: 40px;
+  font-weight: 600;
+  color: #2b221a;
+  font-size: 1.1rem;
+  animation: pulseText 1.5s infinite;
+}
+
+/* El humo */
+.steam {
+  position: absolute;
+  background: #c5bdbc; 
+  border-radius: 50%;
+  filter: blur(5px); 
+  opacity: 0;
+  z-index: 3;
+}
+
+.steam-1 { 
+  width: 15px; height: 15px; top: -10px; left: 20px; 
+  animation: rise 2s infinite ease-in 0.2s; 
+}
+.steam-2 { 
+  width: 20px; height: 20px; top: -20px; left: 40px; 
+  animation: rise 2.5s infinite ease-in 0.8s; 
+}
+.steam-3 { 
+  width: 12px; height: 12px; top: -5px; left: 65px; 
+  animation: rise 1.8s infinite ease-in 1.4s; 
+}
+
+/* El líquido con ondas */
+.coffee-liquid {
+  position: absolute;
+  left: -50px; 
+  width: 200px;
+  height: 200px;
+  background-color: #4a3320;
+  border-radius: 40%; 
+  animation: fillCoffee 2.5s ease-out forwards, spinWave 3s linear infinite;
+}
+
+/* Animación del humo */
+@keyframes rise {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  40% { opacity: 0.5; }
+  100% { transform: translateY(-60px) scale(2); opacity: 0; }
+}
+
+/* Subida del café */
+@keyframes fillCoffee {
+  0% { top: 130px; } 
+  100% { top: 30px; } 
+}
+
+/* Giro para crear el efecto de ola */
+@keyframes spinWave {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Parpadeo del texto */
+@keyframes pulseText {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}

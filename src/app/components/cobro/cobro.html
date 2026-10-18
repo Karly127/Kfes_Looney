@@ -1,0 +1,73 @@
+<div style="display: flex; min-height: 100vh;">
+  <app-sidebar></app-sidebar> 
+
+  <div style="flex-grow: 1; padding: 20px;">    
+    <div style="padding: 20px;">
+      <h2>Cobro y recibos</h2>
+      <p style="color: #666;">Consulta notas de venta y registra el pago de cada mesa</p>
+
+      <div style="display: flex; gap: 20px; margin-top: 20px;">
+        <!-- Lista de Mesas -->
+        <div style="flex: 1;">
+          <input type="text" placeholder="Buscar mesa o nota de venta" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 15px;">
+          
+          <div *ngFor="let mesa of mesas" (click)="seleccionarMesa(mesa.num)"
+              [style.background]="mesaSeleccionada === mesa.num ? '#FCF3CF' : '#fff'"
+              style="padding: 15px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #eee;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+              <strong style="font-size: 18px;">Mesa {{mesa.num}}</strong>
+              <strong style="font-size: 18px;">${{mesa.total}}</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px;">
+              <span style="color: #999;">{{mesa.ticket}}</span>
+              <span [style.color]="mesa.estado === 'Pendiente' ? '#b7950b' : '#1e8449'">{{mesa.estado}}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recibo y Pago -->
+        <div style="flex: 2; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3>Recibo · Mesa {{mesaSeleccionada}}</h3>
+            <span style="background: #FCF3CF; padding: 5px 10px; border-radius: 15px; font-size: 12px; font-weight: bold;">Pendiente de pago</span>
+          </div>
+          <p style="color: #666; font-size: 14px; margin-bottom: 30px;">Nota de venta NV-1048 · atendió Mateo</p>
+
+          <div style="display: flex; justify-content: space-between; padding: 10px 0;">
+            <span><strong style="color: #D4AC0D;">2x</strong> Capuchino clásico</span> <strong>$104.00</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding: 10px 0;">
+            <span><strong style="color: #D4AC0D;">1x</strong> Croissant de mantequilla</span> <strong>$42.00</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+            <span><strong style="color: #D4AC0D;">1x</strong> Pastel de limón</span> <strong>$64.00</strong>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; padding-top: 20px; font-size: 14px; color: #666;">
+            <span>Subtotal</span> <strong>$181.04</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 14px; color: #666; margin-top: 5px;">
+            <span>IVA (16%)</span> <strong>$28.96</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 24px; font-weight: bold; margin-top: 15px;">
+            <span>Total</span> <span>$210.00</span>
+          </div>
+
+          <div style="margin-top: 40px;">
+            <h4>Método de pago</h4>
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+              <button (click)="seleccionarMetodo('Efectivo')" [style.background]="metodoPago === 'Efectivo' ? '#FCF3CF' : '#fff'" style="flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-weight: bold; cursor: pointer;">Efectivo</button>
+              <button (click)="seleccionarMetodo('Tarjeta')" [style.background]="metodoPago === 'Tarjeta' ? '#FCF3CF' : '#fff'" style="flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-weight: bold; cursor: pointer;">Tarjeta</button>
+            </div>
+            
+            <div style="display: flex; gap: 10px;">
+              <button class="btn-secundario" style="flex: 1; padding: 15px;">🖨️ Imprimir recibo</button>
+              <button class="btn-primario" style="flex: 2; padding: 15px;">✔️ Confirmar pago en {{metodoPago}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

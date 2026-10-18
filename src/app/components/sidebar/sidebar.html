@@ -1,0 +1,55 @@
+<div class="sidebar-container">
+  
+  <!-- Sección Superior: Logo y Menú -->
+  <div class="top-section">
+    <div class="brand">
+      <div class="brand-icon">☕</div>
+      <div class="brand-text">
+        <h1>K'fes Looney</h1>
+        <span>GESTIÓN DIARIA</span>
+      </div>
+    </div>
+
+    <nav class="nav-menu">
+      <ul>
+        <!-- Puedes cambiar los emojis por los íconos SVG que prefieras -->
+        <li *ngIf="rolUsuario === 'Administrador'">
+          <a routerLink="/inventario" routerLinkActive="activo">
+            <span class="icon">📦</span> Inventario
+          </a>
+        </li>
+        <li *ngIf="rolUsuario === 'Mesero' || rolUsuario === 'Administrador'">
+          <a routerLink="/pedidos" routerLinkActive="activo">
+            <span class="icon">📋</span> Pedidos
+          </a>
+        </li>
+        <li *ngIf="rolUsuario === 'Trabajador' || rolUsuario === 'Administrador'">
+          <a routerLink="/recepcion" routerLinkActive="activo">
+            <span class="icon">👨‍🍳</span> Recepción
+          </a>
+        </li>
+        <li *ngIf="rolUsuario === 'Trabajador' || rolUsuario === 'Administrador'">
+          <a routerLink="/cobro" routerLinkActive="activo">
+            <span class="icon">💲</span> Cobro
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Sección Inferior: Perfil y Logout -->
+  <div class="bottom-section">
+    <div class="user-profile">
+      <div class="user-avatar"></div>
+      <div class="user-info">
+        <strong>Mi Perfil</strong> 
+        <span>{{ rolUsuario }}</span>
+      </div>
+    </div>
+    
+    <button class="btn-salir" (click)="cerrarSesion()">
+      🚪 Cerrar sesión
+    </button>
+  </div>
+
+</div>

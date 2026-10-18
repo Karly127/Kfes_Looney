@@ -1,0 +1,58 @@
+<div class="login-container">
+  
+  <!-- Panel Izquierdo Oscuro -->
+  <div class="left-panel">
+    <div class="brand-header">
+      <div class="logo-icon">
+        <!-- Ícono de taza simplificado -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+      </div>
+      <span class="brand-name">K'fes Looney</span>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Todo el café, en<br>perfecta<br>coordinación.</h1>
+      <p class="hero-subtitle">Inventario, pedidos, cocina y cobros reunidos en un espacio claro para cada turno.</p>
+    </div>
+
+    <div class="hero-image-container"></div>
+  </div>
+
+  <!-- Panel Derecho Claro (Formulario) -->
+  <div class="right-panel">
+    <div class="login-card">
+      <h2 class="card-title">Bienvenido de vuelta</h2>
+      <p class="card-subtitle">Ingresa tus datos y selecciona tu perfil.</p>
+
+      <div class="form-group">
+        <label>Tipo de usuario</label>
+        <div class="user-types">
+          <button class="type-btn" 
+                  [class.active]="usuarioSeleccionado === 'Administrador'" 
+                  (click)="seleccionarUsuario('Administrador')">Administrador</button>
+                  
+          <button class="type-btn" 
+                  [class.active]="usuarioSeleccionado === 'Trabajador'" 
+                  (click)="seleccionarUsuario('Trabajador')">Trabajador</button>
+                  
+          <button class="type-btn" 
+                  [class.active]="usuarioSeleccionado === 'Mesero'" 
+                  (click)="seleccionarUsuario('Mesero')">Mesero</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Correo electrónico</label>
+        <input type="email" placeholder="sofia@migacafe.mx" class="form-input">
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" placeholder="••••••••••" class="form-input">
+      </div>
+
+      <button class="submit-btn" (click)="ingresarAlSistema()">Ingresar al sistema</button>
+    </div>
+  </div>
+
+</div>

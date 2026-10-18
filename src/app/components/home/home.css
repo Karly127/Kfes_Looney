@@ -1,0 +1,49 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4efe7;
+  font-family: 'Inter', sans-serif;
+}
+
+.welcome-card {
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  max-width: 500px;
+}
+
+.logo-icon-large {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
+  color: #2b221a;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #6a645f;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.logout-btn {
+  padding: 12px 24px;
+  background-color: #2b221a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.logout-btn:hover {
+  opacity: 0.8;
+}

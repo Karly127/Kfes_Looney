@@ -1,0 +1,199 @@
+/* Contenedor principal a pantalla completa */
+.login-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+}
+
+/* --- PANEL IZQUIERDO --- */
+.left-panel {
+  flex: 1;
+  background-color: #2b221a; /* Marrón oscuro */
+  color: #ffffff;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-icon {
+  background-color: #f1c74d; /* Amarillo principal */
+  color: #2b221a;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.logo-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.brand-name {
+  font-family: 'Merriweather', 'Georgia', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.hero-content {
+  margin-top: 40px;
+}
+
+.hero-title {
+  font-family: 'Merriweather', 'Georgia', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #d1cbc5; /* Gris claro / Beige oscuro */
+  max-width: 450px;
+  line-height: 1.5;
+}
+
+.hero-image-container {
+  width: 100%;
+  max-width: 450px;
+  height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.hero-image-container {
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  border-radius: 16px;
+  margin-top: 40px;
+  
+  background-image: url('../../../assets/coffee-shop.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+
+/* --- PANEL DERECHO --- */
+.right-panel {
+  flex: 1;
+  background-color: #f4efe7; /* Color beige claro del fondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 480px;
+  padding: 50px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+.card-title {
+  font-family: 'Merriweather', 'Georgia', serif;
+  font-size: 2rem;
+  color: #2b221a;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.card-subtitle {
+  color: #6a645f;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2b221a;
+  margin-bottom: 8px;
+}
+
+/* Botones de tipo de usuario */
+
+.type-btn {
+  flex: 1;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #e0dbce;
+  border-radius: 8px;
+  color: #2b221a;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Efecto al pasar el mouse (se ilumina con un amarillo muy tenue) */
+.type-btn:hover {
+  background-color: #fcf6e3; 
+}
+
+/* Efecto al darle clic (amarillo fuerte) */
+.type-btn.active {
+  background-color: #f1c74d; 
+  border-color: #d3a726; 
+  color: #2b221a;
+}
+.user-types {
+  display: flex;
+  gap: 10px;
+}
+
+/* Inputs del formulario */
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0dbce;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #2b221a;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #f1c74d;
+}
+
+/* Botón principal */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #f1c74d;
+  color: #2b221a;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #e0b63b;
+}

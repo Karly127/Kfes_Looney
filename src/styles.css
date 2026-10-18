@@ -1,0 +1,33 @@
+:root {
+  --bg-dark: #2C1E16; /* Color del sidebar */
+  --bg-light: #F7F3EB; /* Fondo principal */
+  --primary-yellow: #F4D03F; /* Botones principales */
+  --text-dark: #333333;
+  --text-light: #FFFFFF;
+  --border-radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* Estilos comunes para botones */
+.btn-primario {
+  background-color: var(--primary-yellow);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-secundario {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
