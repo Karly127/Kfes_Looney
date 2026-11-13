@@ -32,8 +32,12 @@
                   (click)="seleccionarUsuario('Administrador')">Administrador</button>
                   
           <button class="type-btn" 
-                  [class.active]="usuarioSeleccionado === 'Trabajador'" 
-                  (click)="seleccionarUsuario('Trabajador')">Trabajador</button>
+                  [class.active]="usuarioSeleccionado === 'Cafetería'" 
+                  (click)="seleccionarUsuario('Cafetería')">Cafetería</button>
+
+          <button class="type-btn" 
+                  [class.active]="usuarioSeleccionado === 'Cocina'" 
+                  (click)="seleccionarUsuario('Cocina')">Cocina</button>
                   
           <button class="type-btn" 
                   [class.active]="usuarioSeleccionado === 'Mesero'" 

@@ -12,28 +12,41 @@
 
     <nav class="nav-menu">
       <ul>
-        <!-- Puedes cambiar los emojis por los íconos SVG que prefieras -->
-        <li *ngIf="rolUsuario === 'Administrador'">
-          <a routerLink="/inventario" routerLinkActive="activo">
-            <span class="icon">📦</span> Inventario
-          </a>
-        </li>
-        <li *ngIf="rolUsuario === 'Mesero' || rolUsuario === 'Administrador'">
-          <a routerLink="/pedidos" routerLinkActive="activo">
-            <span class="icon">📋</span> Pedidos
-          </a>
-        </li>
-        <li *ngIf="rolUsuario === 'Trabajador' || rolUsuario === 'Administrador'">
-          <a routerLink="/recepcion" routerLinkActive="activo">
-            <span class="icon">👨‍🍳</span> Recepción
-          </a>
-        </li>
-        <li *ngIf="rolUsuario === 'Trabajador' || rolUsuario === 'Administrador'">
-          <a routerLink="/cobro" routerLinkActive="activo">
-            <span class="icon">💲</span> Cobro
-          </a>
-        </li>
-      </ul>
+  <!-- Inventario: Solo Admin -->
+  <li *ngIf="rolUsuario === 'Administrador'">
+    <a routerLink="/inventario" routerLinkActive="activo">
+      <span class="icon">📦</span> Inventario
+    </a>
+  </li>
+
+  <!-- Pedidos: Mesero y Admin -->
+  <li *ngIf="rolUsuario === 'Mesero' || rolUsuario === 'Administrador'">
+    <a routerLink="/pedidos" routerLinkActive="activo">
+      <span class="icon">📋</span> Pedidos
+    </a>
+  </li>
+
+  <!-- Recepción Cafetería: Cafetería y Admin -->
+  <li *ngIf="rolUsuario === 'Cafetería' || rolUsuario === 'Administrador'">
+    <a routerLink="/recepcion" routerLinkActive="activo">
+      <span class="icon">☕</span> Recepción
+    </a>
+  </li>
+
+  <!-- Recepción Cocina: Cocina y Admin -->
+  <li *ngIf="rolUsuario === 'Cocina' || rolUsuario === 'Administrador'">
+    <a routerLink="/cocina" routerLinkActive="activo">
+      <span class="icon">🍔</span> Cocina
+    </a>
+  </li>
+
+  <!-- Cobro: SOLO Cafetería y Admin (Oculto para Cocina) -->
+  <li *ngIf="rolUsuario === 'Cafetería' || rolUsuario === 'Administrador'">
+    <a routerLink="/cobro" routerLinkActive="activo">
+      <span class="icon">💲</span> Cobro
+    </a>
+  </li>
+</ul>
     </nav>
   </div>
 

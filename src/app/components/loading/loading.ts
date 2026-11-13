@@ -16,8 +16,10 @@ export class LoadingComponent implements OnInit {
 
     if (rolDelUsuarioQueIngreso === 'Mesero') {
       this.router.navigate(['/pedidos']);
-    } else if (rolDelUsuarioQueIngreso === 'Trabajador') {
+    } else if (rolDelUsuarioQueIngreso === 'Cafetería') {
       this.router.navigate(['/recepcion']);
+    } else if (rolDelUsuarioQueIngreso === 'Cocina') {
+      this.router.navigate(['/cocina']);
     } else if (rolDelUsuarioQueIngreso === 'Administrador') {
       this.router.navigate(['/inventario']);
     } else {
